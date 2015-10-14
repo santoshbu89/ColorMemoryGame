@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="Scripts/angular.min.js"></script>
+    <script src="Scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="Scripts/ColorApp.js"></script>
+</head>
+
+<body ng-controller="myCtrl">
+    <div style="height:616px;width:488px;margin-left:350px;margin-top:25px;border:double">
+        <div ng-repeat="card in colorArr track by $index" class="col-md-3">
+            <div style="float:left;padding:3px;border:double" ng-click="flipCard(card)">
+                <img ng-src="Images/{{card.bgImage}}.gif" ng-show="card.colorShown" style="width:110px">
+                <img src="Images/card_bg.gif" ng-show="card.bgShown" style="width:110px" />
+            </div>
+        </div>
+    </div>
+    <div style="margin-left:305px;margin-top:-444px">
+        <img src="Images/logo.png">
+        <h2 style="margin-left:593px">Score: {{score}}</h2>
+        <input type="button" class="" value="Restart" id="restart" style="margin-left: 68px">
+    </div>
+</body>
+</html>
